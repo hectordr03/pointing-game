@@ -44,33 +44,24 @@ console.log("Working (1)")
 const dir = ["up", "down", "left", "right"];
 let cpu = dir[Math.floor(Math.random() * 4)];
 
-const up = document.getElementById("up").value;
-const down = document.getElementById("down").value;
-const left = document.getElementById("left").value;
-const right = document.getElementById("right").value;
+const up = document.getElementById("up").value = "up";
+const down = document.getElementById("down").value = "down";
+const left = document.getElementById("left").value = "left";
+const right = document.getElementById("right").value = "right";
 
 console.log(`Logging button values: ${up}, ${down}, ${left}, ${right} (2)`)
 
-compareUp = () => {
-    cpu = dir[Math.floor(Math.random() * 4)];
-    result = (cpu == up) ? true : false ;
-    console.log(result)
+let userScore = 0;
+let cpuScore = 0;
+let winScore = 3;
+
+testFunction = (direction) => {
+    console.log(direction)
 }
 
-compareDown = () => {
-    cpu = dir[Math.floor(Math.random() * 4)];
-    result = (cpu == down) ? true : false ;
-    console.log(result)
-}
-
-compareLeft = () => {
-    cpu = dir[Math.floor(Math.random() * 4)];
-    result = (cpu == left) ? true : false ;
-    console.log(result)
-}
-
-compareRight = () => {
-    cpu = dir[Math.floor(Math.random() * 4)];
-    result = (cpu == right) ? true : false ;
-    console.log(result)
+compare = (point, look) => {
+    look = dir[Math.floor(Math.random() * 4)];
+    if (point == look) {
+        console.log (`Nice, You pointed ${point}. The cpu looked ${look}`)
+    } else (console.log (`Dang, You pointed ${point}. The cpu looked ${look}`))
 }
