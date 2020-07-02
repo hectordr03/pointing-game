@@ -65,3 +65,21 @@ compare = (point, look) => {
         console.log (`Nice, You pointed ${point}. The cpu looked ${look}`)
     } else (console.log (`Dang, You pointed ${point}. The cpu looked ${look}`))
 }
+
+point = (point, look) => {
+    look = dir[Math.floor(Math.random() * 4)];
+
+    if (point == look) {
+        userScore++;
+        console.log(`You were right. Your point total is now: ${userScore}`)
+    } else (`You were wrong. Your total is still: ${userScore}`)
+}
+
+look = (look, point) => {
+    point = dir[Math.floor(Math.random() * 4)];
+
+    if (look == point) {
+        cpuScore++;
+        console.log(`The cpu was right. Their point total is now ${cpuScore}`)
+    } else (console.log(`The cpu was wrong. Their total is still: ${userScore}`))
+}
