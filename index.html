@@ -8,33 +8,49 @@
 </head>
 <body>
     <div class="box">
-        <div class="choices">
+        <div class="choices" id="point">
             <p>Which way will you point?</p>
 
-            <button class="choice" id="up" onclick="point(up, cpu)">Up</button>
-            <button class="choice" id="down" onclick="point(down, cpu)">Down</button>
-            <button class="choice" id="left" onclick="point(left, cpu)">Left</button>
-            <button class="choice" id="right" onclick="point(right, cpu)">Right</button>
-
-            <!-- <div class="choice" id="up">Up</div>
-            <div class="choice" id="down">Down</div>
-            <div class="choice" id="left">Left</div>
-            <div class="choice" id="right">Right</div> -->
+            <button id="up" onclick="point(up, cpu)">Up</button>
+            <button id="down" onclick="point(down, cpu)">Down</button>
+            <button id="left" onclick="point(left, cpu)">Left</button>
+            <button id="right" onclick="point(right, cpu)">Right</button>
         </div>
 
-        <div class="choices">
+        <!-- <div class="choices" id="look">
+            <p>It's the cpu's turn.</p>
             <p>Which way will you look?</p>
 
-            <button class="choice" id="up" onclick="look(up, cpu)">Up</button>
-            <button class="choice" id="down" onclick="look(down, cpu)">Down</button>
-            <button class="choice" id="left" onclick="look(left, cpu)">Left</button>
-            <button class="choice" id="right" onclick="look(right, cpu)">Right</button>
+            <button id="up" onclick="look(up, cpu)">Up</button>
+            <button id="down" onclick="look(down, cpu)">Down</button>
+            <button id="left" onclick="look(left, cpu)">Left</button>
+            <button id="right" onclick="look(right, cpu)">Right</button>
+        </div> -->
+
+        <div class="choices" id="look">
+            <p>It's the CPU's turn now. Which way will you look?</p>
+
+            <button id="up" onclick="look(up, cpu)">Up</button>
+            <button id="down" onclick="look(down, cpu)">Down</button>
+            <button id="left" onclick="look(left, cpu)">Left</button>
+            <button id="right" onclick="look(right, cpu)">Right</button>
         </div>
 
-        <div class="dialogue">
-            <p id="message"></p>
+        <div id="message">
+            <h4>Press "Start" to play the Pointing game.</h4>
+            <button onclick="next(message, userPoint)">Start</button>
         </div>
 
+        <!-- <div id="oldText">
+            <h2>I want the next section</h2>
+            <p>This is section 1</p>
+            <button onclick="test()">Test next button</button>
+        </div>
+
+        <div id="newText">
+            <h2>This is new text</h2>
+            <p>This is section 2</p>
+        </div> -->
     </div>
 
     <script src="./script.js"></script>
