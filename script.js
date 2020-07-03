@@ -71,8 +71,9 @@ point = (point, look) => {
 
     if (point == look) {
         userScore++;
-        console.log(`You were right. Your point total is now: ${userScore}`)
-    } else (`You were wrong. Your total is still: ${userScore}`)
+        console.log(`You got a point. Your point total is now: ${userScore}`)
+        document.getElementById("message").innerText = `You got a point. Your total is: ${userScore}`;
+    } else (console.log(`You were wrong. Your total is still: ${userScore}`))
 }
 
 look = (look, point) => {
@@ -81,5 +82,6 @@ look = (look, point) => {
     if (look == point) {
         cpuScore++;
         console.log(`The cpu was right. Their point total is now ${cpuScore}`)
-    } else (console.log(`The cpu was wrong. Their total is still: ${userScore}`))
+        document.getElementById("message").innerText = `The CPU got a point. Their total is: ${cpuScore}`;
+    } else (console.log(`The cpu was wrong. Their total is still: ${cpuScore}`))
 }
