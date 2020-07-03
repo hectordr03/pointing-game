@@ -55,15 +55,27 @@ let userScore = 0;
 let cpuScore = 0;
 let winScore = 3;
 
+const message = document.getElementById("message");
+const userPoint = document.getElementById("point");
+const userLook = document.getElementById("look");
+
 testFunction = (direction) => {
     console.log(direction)
 }
 
-compare = (point, look) => {
-    look = dir[Math.floor(Math.random() * 4)];
-    if (point == look) {
-        console.log (`Nice, You pointed ${point}. The cpu looked ${look}`)
-    } else (console.log (`Dang, You pointed ${point}. The cpu looked ${look}`))
+// compare = (point, look) => {
+//     look = dir[Math.floor(Math.random() * 4)];
+//     if (point == look) {
+//         console.log (`Nice, You pointed ${point}. The cpu looked ${look}`)
+//     } else (console.log (`Dang, You pointed ${point}. The cpu looked ${look}`))
+// }
+
+start = () => {
+    message.innerHTML = userPoint.innerHTML;
+}
+
+next = (current, next) => {
+    current.innerHTML = next.innerHTML;
 }
 
 point = (point, look) => {
@@ -71,9 +83,10 @@ point = (point, look) => {
 
     if (point == look) {
         userScore++;
-        console.log(`You got a point. Your point total is now: ${userScore}`)
-        document.getElementById("message").innerText = `You got a point. Your total is: ${userScore}`;
-    } else (console.log(`You were wrong. Your total is still: ${userScore}`))
+        alert(`You point ${point} with the fury of a thousand suns. The CPU shamefully looks ${look}. Your point total is now: ${userScore}`)
+    }
+    else (alert(`You point ${point} in full confidence... but the CPU looks ${look}. It's their turn now.`), next (message, userLook))
+    // document.getElementById("message").innerText = `You got a point. Your total is: ${userScore}`;
 }
 
 look = (look, point) => {
@@ -81,7 +94,28 @@ look = (look, point) => {
 
     if (look == point) {
         cpuScore++;
-        console.log(`The cpu was right. Their point total is now ${cpuScore}`)
-        document.getElementById("message").innerText = `The CPU got a point. Their total is: ${cpuScore}`;
-    } else (console.log(`The cpu was wrong. Their total is still: ${cpuScore}`))
+        alert(`The CPU points ${point}. You dramatically turn your head ${look}. Their point total is now ${cpuScore}`)
+        // document.getElementById("message").innerText = `The CPU got a point. Their total is: ${cpuScore}`;
+    } else (alert(`The CPU points ${point}. You epically turn your head away, looking ${look}.`), next(message, userPoint))
 }
+
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// test = () => {
+//     let oldBlock = document.getElementById("oldText");
+//     let newBlock = document.getElementById("newText");
+
+//     oldBlock.innerHTML = newBlock.innerHTML;
+// }
+
+// const message = document.getElementById("message");
+// const userPoint = document.getElementById("point");
+// const userLook = document.getElementById("look");
+
+// start = () => {
+//     message.innerHTML = userPoint.innerHTML;
+// }
+
+// next = (current, next) => {
+//     current.innerHTML = next.innerHTML;
+// }
