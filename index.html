@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div>
-        <p>Which way will you point?</p>
+    <div class="box">
+        <div class="choices">
+            <p>Which way will you point?</p>
 
-        <button class="choice" id="up" onclick="point(up, cpu)">Up</button>
-        <button class="choice" id="down" onclick="point(down, cpu)">Down</button>
-        <button class="choice" id="left" onclick="point(left, cpu)">Left</button>
-        <button class="choice" id="right" onclick="point(right, cpu)">Right</button>
+            <button class="choice" id="up" onclick="point(up, cpu)">Up</button>
+            <button class="choice" id="down" onclick="point(down, cpu)">Down</button>
+            <button class="choice" id="left" onclick="point(left, cpu)">Left</button>
+            <button class="choice" id="right" onclick="point(right, cpu)">Right</button>
 
-        <!-- <div class="choice" id="up">Up</div>
-        <div class="choice" id="down">Down</div>
-        <div class="choice" id="left">Left</div>
-        <div class="choice" id="right">Right</div> -->
-    </div>
+            <!-- <div class="choice" id="up">Up</div>
+            <div class="choice" id="down">Down</div>
+            <div class="choice" id="left">Left</div>
+            <div class="choice" id="right">Right</div> -->
+        </div>
 
-    <div>
-        <p>Which way will you look?</p>
+        <div class="choices">
+            <p>Which way will you look?</p>
 
-        <button class="choice" id="up" onclick="look(up, cpu)">Up</button>
-        <button class="choice" id="down" onclick="look(down, cpu)">Down</button>
-        <button class="choice" id="left" onclick="look(left, cpu)">Left</button>
-        <button class="choice" id="right" onclick="look(right, cpu)">Right</button>
+            <button class="choice" id="up" onclick="look(up, cpu)">Up</button>
+            <button class="choice" id="down" onclick="look(down, cpu)">Down</button>
+            <button class="choice" id="left" onclick="look(left, cpu)">Left</button>
+            <button class="choice" id="right" onclick="look(right, cpu)">Right</button>
+        </div>
+
+        <div class="dialogue">
+            <p id="message"></p>
+        </div>
+
     </div>
 
     <script src="./script.js"></script>
