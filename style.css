@@ -1,0 +1,10 @@
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.choices {
+    border: 1px solid green;
+    height: 20em;
+    width: 20em;
+}
