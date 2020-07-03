@@ -20,3 +20,7 @@
     grid-column: 2/3;
     text-align: center;
 }
+
+#play-again {
+    display: none;
+}

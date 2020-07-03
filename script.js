@@ -58,6 +58,7 @@ let winScore = 3;
 const message = document.getElementById("message");
 const userPoint = document.getElementById("point");
 const userLook = document.getElementById("look");
+const playAgain = document.getElementById("play-again")
 
 testFunction = (direction) => {
     console.log(direction)
@@ -86,7 +87,13 @@ point = (point, look) => {
         alert(`You point ${point} with the fury of a thousand suns. The CPU shamefully looks ${look}. Your point total is now: ${userScore}`)
     }
     else (alert(`You point ${point} in full confidence... but the CPU looks ${look}. It's their turn now.`), next (message, userLook))
-    // document.getElementById("message").innerText = `You got a point. Your total is: ${userScore}`;
+
+    if (userScore == winScore) {
+        alert (`Congrats! You beat the CPU at the pointing game. Now the champion deserves some rest`)
+        cpuScore = 0;
+        userScore = 0;
+        message.innerHTML = playAgain.innerHTML; 
+    }
 }
 
 look = (look, point) => {
@@ -97,25 +104,24 @@ look = (look, point) => {
         alert(`The CPU points ${point}. You dramatically turn your head ${look}. Their point total is now ${cpuScore}`)
         // document.getElementById("message").innerText = `The CPU got a point. Their total is: ${cpuScore}`;
     } else (alert(`The CPU points ${point}. You epically turn your head away, looking ${look}.`), next(message, userPoint))
+
+    if (cpuScore == winScore) {
+        alert (`You lost! to.. a computer... at a pointing game.... Well you'll get 'im next time bud. Just try again.'`)
+        cpuScore = 0;
+        userScore = 0;
+        message.innerHTML = playAgain.innerHTML; 
+    }
 }
 
-
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-// test = () => {
-//     let oldBlock = document.getElementById("oldText");
-//     let newBlock = document.getElementById("newText");
 
-//     oldBlock.innerHTML = newBlock.innerHTML;
-// }
-
-// const message = document.getElementById("message");
-// const userPoint = document.getElementById("point");
-// const userLook = document.getElementById("look");
-
-// start = () => {
-//     message.innerHTML = userPoint.innerHTML;
-// }
-
-// next = (current, next) => {
-//     current.innerHTML = next.innerHTML;
+// if (userScore == winScore) {
+//     console.log (`Congrats! You beat the CPU at the pointing game. Now the champion deserves some rest`)
+//     cpuScore = 0;
+//     userScore = 0;
+// } 
+// else if (cpuScore == winScore) {
+//     console.log (`You lost! to.. a computer... at a pointing game.... Well you'll get 'im next time bud. Just try again.'`)
+//     cpuScore = 0;
+//     userScore = 0;
 // }
