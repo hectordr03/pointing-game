@@ -39,7 +39,7 @@
 
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-console.log("Working (1)")
+// console.log("Working (1)")
 
 const dir = ["up", "down", "left", "right"];
 let cpu = dir[Math.floor(Math.random() * 4)];
@@ -49,34 +49,34 @@ const down = document.getElementById("down").value = "down";
 const left = document.getElementById("left").value = "left";
 const right = document.getElementById("right").value = "right";
 
-console.log(`Logging button values: ${up}, ${down}, ${left}, ${right} (2)`)
-
 let userScore = 0;
 let cpuScore = 0;
 let winScore = 3;
 
-const message = document.getElementById("message");
+const message_div = document.getElementById("message-box");
 const userPoint = document.getElementById("point");
 const userLook = document.getElementById("look");
-const playAgain = document.getElementById("play-again")
+const playAgain = document.getElementById("play-again");
 
-testFunction = (direction) => {
-    console.log(direction)
-}
+const scoreboard = document.getElementById("score-board");
+// const userScore = document.getElementById("user-score");
+// const cpuScore = document.getElementById("cpu-score");
+// const winScore = document.getElementById("win-score");
 
-// compare = (point, look) => {
-//     look = dir[Math.floor(Math.random() * 4)];
-//     if (point == look) {
-//         console.log (`Nice, You pointed ${point}. The cpu looked ${look}`)
-//     } else (console.log (`Dang, You pointed ${point}. The cpu looked ${look}`))
-// }
+// const userScore_div = document.getElementById("user-score").innerHTML = userScore;
+// const cpuScore_div = document.getElementById("cpu-score").innerHTML = cpuScore;
 
-start = () => {
-    message.innerHTML = userPoint.innerHTML;
-}
+// console.log(`Logging button values: ${up}, ${down}, ${left}, ${right} (2)`)
 
-next = (current, next) => {
-    current.innerHTML = next.innerHTML;
+const roundWin = document.getElementById('win-round');
+const roundLoss = document.getElementById('loss-round');
+
+const cpuRoundWin = document.getElementById('cpu-roundWin');
+const cpuRoundLoss = document.getElementById('cpu-roundLoss');
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+
+message = (target) => {
+    message_div.innerHTML = target.innerHTML;
 }
 
 point = (point, look) => {
@@ -84,44 +84,41 @@ point = (point, look) => {
 
     if (point == look) {
         userScore++;
-        alert(`You point ${point} with the fury of a thousand suns. The CPU shamefully looks ${look}. Your point total is now: ${userScore}`)
+        message(roundWin)
+        // alert(`You point ${point} with the fury of a thousand suns. The CPU shamefully looks ${look}. Your point total is now: ${userScore}`)
     }
-    else (alert(`You point ${point} in full confidence... but the CPU looks ${look}. It's their turn now.`), next (message, userLook))
+    else (message(roundLoss))
+    // else (alert(`You point ${point} in full confidence... but the CPU looks ${look}. It's their turn now.`), message(userLook))
 
-    if (userScore == winScore) {
+    if (userScore == 3) {
         alert (`Congrats! You beat the CPU at the pointing game. Now the champion deserves some rest`)
         cpuScore = 0;
         userScore = 0;
-        message.innerHTML = playAgain.innerHTML; 
+        message_div.innerHTML = playAgain.innerHTML; 
     }
 }
+
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 look = (look, point) => {
     point = dir[Math.floor(Math.random() * 4)];
 
     if (look == point) {
         cpuScore++;
-        alert(`The CPU points ${point}. You dramatically turn your head ${look}. Their point total is now ${cpuScore}`)
+        message(cpuRoundWin)
+        // alert(`The CPU points ${point}. You dramatically turn your head ${look}. Their point total is now ${cpuScore}`)
         // document.getElementById("message").innerText = `The CPU got a point. Their total is: ${cpuScore}`;
-    } else (alert(`The CPU points ${point}. You epically turn your head away, looking ${look}.`), next(message, userPoint))
+    } 
+    else (message(cpuRoundLoss))
+    // (alert(`The CPU points ${point}. You epically turn your head away, looking ${look}.`), message(userPoint))
+    // else (message())
 
-    if (cpuScore == winScore) {
+    if (cpuScore == 3) {
         alert (`You lost! to.. a computer... at a pointing game.... Well you'll get 'im next time bud. Just try again.'`)
         cpuScore = 0;
         userScore = 0;
-        message.innerHTML = playAgain.innerHTML; 
+        message (playAgain);
     }
 }
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
-// if (userScore == winScore) {
-//     console.log (`Congrats! You beat the CPU at the pointing game. Now the champion deserves some rest`)
-//     cpuScore = 0;
-//     userScore = 0;
-// } 
-// else if (cpuScore == winScore) {
-//     console.log (`You lost! to.. a computer... at a pointing game.... Well you'll get 'im next time bud. Just try again.'`)
-//     cpuScore = 0;
-//     userScore = 0;
-// }
