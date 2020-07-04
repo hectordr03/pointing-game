@@ -2,22 +2,24 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    height: 100vh;
+    width: auto;
 }
 
-.choices {
-    border: 1px solid green;
-    height: 20em;
-    width: 20em;
+.choices, .messages {
     display: none;
     text-align: center;
 }
 
-#message {
+#message-box {
     /* border: 1px solid black; */
     /* height: 10em;
     width: 30em; */
+    border: 1px solid green;
+    height: 10em;
+    width: auto;
     grid-row: 3/3;
-    grid-column: 2/3;
+    grid-column: 1/4;
     text-align: center;
 }
 
