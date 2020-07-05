@@ -1,4 +1,7 @@
 .box {
+    background-image: url(./assets/pokemon-background.png);
+    background-size: contain;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -12,17 +15,78 @@
 }
 
 #message-box {
-    /* border: 1px solid black; */
-    /* height: 10em;
-    width: 30em; */
-    border: 1px solid green;
+    border: 5px solid #077187;
     height: 10em;
     width: auto;
     grid-row: 3/3;
     grid-column: 1/4;
     text-align: center;
+    border-radius: 0.5em;
+
+    display: grid;
+    justify-content: center;
+    text-align: cente
 }
+
+/* .message {
+    grid-column: 1/3;
+} */
 
 #play-again {
     display: none;
+}
+
+/* This button style was sourced from https://adamschwartz.co/magic-of-css/potions/buttons/ */
+
+.choice-btns, #start-btn, #continue{
+    outline: none;
+    margin: 0;
+    background: #0772878f;
+    cursor: pointer;
+    border: 0;
+    padding: .4em .8em;
+    text-rendering: optimizeLegibility;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 300;
+    color: inherit;
+
+    height: 3em;
+    width: 20em;
+
+    border-radius: 0.5em;
+    border: 1px solid black;
+}
+
+#point {
+    text-align: center;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    text-align: center;
+    justify-content: center;
+
+    grid-gap: 3px;
+}
+
+#scoreboard_container{
+    grid-row: 1/1;
+    grid-column: 2/3;
+
+    display: flex;
+    justify-content: center;
+}
+
+.scoreboard {
+    border: 1px solid red;
+    border-radius: 0.4em;
+    background-color: #E4C5AF;
+
+    height: 5em;
+    width: 15em;
+
+    text-align: center;
 }
