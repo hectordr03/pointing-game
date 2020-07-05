@@ -11,58 +11,64 @@
         <div class="choices" id="point">
             <p>Which way will you point?</p>
 
-            <button id="up" onclick="point(up, cpu)">Up</button>
-            <button id="down" onclick="point(down, cpu)">Down</button>
-            <button id="left" onclick="point(left, cpu)">Left</button>
-            <button id="right" onclick="point(right, cpu)">Right</button>
+            <div class="buttons">
+                <button name="up" class="choice-btns"id="up" onclick="point(up, cpu)">Up</button>
+                <button class="choice-btns"id="down" onclick="point(down, cpu)">Down</button>
+                <button class="choice-btns"id="left" onclick="point(left, cpu)">Left</button>
+                <button class="choice-btns"id="right" onclick="point(right, cpu)">Right</button>
+            </div>
+
         </div>
 
         <div class="choices" id="look">
             <p>It's the CPU's turn now. Which way will you look?</p>
 
-            <button id="up" onclick="look(up, cpu)">Up</button>
-            <button id="down" onclick="look(down, cpu)">Down</button>
-            <button id="left" onclick="look(left, cpu)">Left</button>
-            <button id="right" onclick="look(right, cpu)">Right</button>
+            <div class="buttons">
+                <button class="choice-btns"id="up" onclick="look(up, cpu)">Up</button>
+                <button class="choice-btns"id="down" onclick="look(down, cpu)">Down</button>
+                <button class="choice-btns"id="left" onclick="look(left, cpu)">Left</button>
+                <button class="choice-btns"id="right" onclick="look(right, cpu)">Right</button>
+            </div>
         </div>
 
         <div id="message-box">
-            <h4>Press "Start" to play the Pointing game.</h4>
-            <button onclick="message(userPoint)">Start</button>
+            <h4 class="message">Press "Start" to play the Pointing game.</h4>
+            <button id="start-btn" onclick="message(userPoint)">Start</button>
         </div>
 
         <div id="play-again">
             <h4>Click to play again!</h4>
-            <button onclick="message(userPoint)">Play</button>
+            <button id="continue" onclick="message(userPoint)">Play</button>
         </div>
 
-        <!-- <div id="score-board">
-            Player: <span id="user-score" value="0"></span>
-            CPU: <span id="cpu-score" ></span>
-        </div> -->
-
+        <div id="scoreboard_container">
+            <div class="scoreboard">
+                <p id="user-score" ></p>
+                <p id="cpu-score"></p>
+            </div>
+        </div>
     </div>
 
     <!-- Class="messages" are hidden and displayed after continuing message box -->
 
     <div id="win-round" class="messages">
         <p>You got him! You get another chance...</p>
-        <button onclick="message(userPoint)">continue</button>
+        <button id="continue" onclick="message(userPoint)">continue</button>
     </div>
 
     <div id="loss-round" class="messages">
         <p>The CPU looked away! It's his turn now...</p>
-        <button onclick="message(userLook)">continue</button>
+        <button id="continue" onclick="message(userLook)">continue</button>
     </div>
 
     <div id="cpu-roundWin" class="messages">
         <p>Oh no! He got you, he gets another turn!</p>
-        <button onclick="message(userLook)">continue</button>
+        <button id="continue" onclick="message(userLook)">continue</button>
     </div>
 
     <div id="cpu-roundLoss" class="messages">
         <p>You managed to look away!</p>
-        <button onclick="message(userPoint)">continue</button>
+        <button id="continue" onclick="message(userPoint)">continue</button>
     </div>
 
     <script src="./script.js"></script>
