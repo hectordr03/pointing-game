@@ -49,16 +49,17 @@ const down = document.getElementById("down").value = "down";
 const left = document.getElementById("left").value = "left";
 const right = document.getElementById("right").value = "right";
 
-let userScore = 0;
-let cpuScore = 0;
-let winScore = 3;
+let userScore = "0";
+let cpuScore = "0";
+let winScore = 3;;
 
 const message_div = document.getElementById("message-box");
 const userPoint = document.getElementById("point");
 const userLook = document.getElementById("look");
 const playAgain = document.getElementById("play-again");
 
-const scoreboard = document.getElementById("score-board");
+const userScore_div = document.getElementById("user-score");
+const cpuScore_div = document.getElementById("cpu-score");
 // const userScore = document.getElementById("user-score");
 // const cpuScore = document.getElementById("cpu-score");
 // const winScore = document.getElementById("win-score");
@@ -73,10 +74,13 @@ const roundLoss = document.getElementById('loss-round');
 
 const cpuRoundWin = document.getElementById('cpu-roundWin');
 const cpuRoundLoss = document.getElementById('cpu-roundLoss');
+
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
 message = (target) => {
     message_div.innerHTML = target.innerHTML;
+    userScore_div.innerText= `Player Score: ${userScore}`;
+    cpuScore_div.innerText= `CPU Score: ${cpuScore}`;
 }
 
 point = (point, look) => {
@@ -84,8 +88,9 @@ point = (point, look) => {
 
     if (point == look) {
         userScore++;
-        message(roundWin)
+        message(roundWin);
         // alert(`You point ${point} with the fury of a thousand suns. The CPU shamefully looks ${look}. Your point total is now: ${userScore}`)
+        // scoreboard.innerText= "Player Score:" + userScore;
     }
     else (message(roundLoss))
     // else (alert(`You point ${point} in full confidence... but the CPU looks ${look}. It's their turn now.`), message(userLook))
@@ -94,7 +99,7 @@ point = (point, look) => {
         alert (`Congrats! You beat the CPU at the pointing game. Now the champion deserves some rest`)
         cpuScore = 0;
         userScore = 0;
-        message_div.innerHTML = playAgain.innerHTML; 
+        message (playAgain);
     }
 }
 
@@ -106,6 +111,7 @@ look = (look, point) => {
     if (look == point) {
         cpuScore++;
         message(cpuRoundWin)
+        scoreboard.innerText = document.write();
         // alert(`The CPU points ${point}. You dramatically turn your head ${look}. Their point total is now ${cpuScore}`)
         // document.getElementById("message").innerText = `The CPU got a point. Their total is: ${cpuScore}`;
     } 
