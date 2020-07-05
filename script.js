@@ -41,6 +41,7 @@
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 // console.log("Working (1)")
 
+// declaring initial variables (player, cpu, diections, etc)
 const dir = ["up", "down", "left", "right"];
 let cpu = dir[Math.floor(Math.random() * 4)];
 
@@ -53,21 +54,15 @@ let userScore = "0";
 let cpuScore = "0";
 let winScore = 3;;
 
+// Message divs to display different message in message box
 const message_div = document.getElementById("message-box");
 const userPoint = document.getElementById("point");
 const userLook = document.getElementById("look");
 const playAgain = document.getElementById("play-again");
 
+// scoreboard div elements
 const userScore_div = document.getElementById("user-score");
 const cpuScore_div = document.getElementById("cpu-score");
-// const userScore = document.getElementById("user-score");
-// const cpuScore = document.getElementById("cpu-score");
-// const winScore = document.getElementById("win-score");
-
-// const userScore_div = document.getElementById("user-score").innerHTML = userScore;
-// const cpuScore_div = document.getElementById("cpu-score").innerHTML = cpuScore;
-
-// console.log(`Logging button values: ${up}, ${down}, ${left}, ${right} (2)`)
 
 const roundWin = document.getElementById('win-round');
 const roundLoss = document.getElementById('loss-round');
@@ -77,12 +72,14 @@ const cpuRoundLoss = document.getElementById('cpu-roundLoss');
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
+// Replaces and displays messages in the mssage box
 message = (target) => {
     message_div.innerHTML = target.innerHTML;
     userScore_div.innerText= `Player Score: ${userScore}`;
     cpuScore_div.innerText= `CPU Score: ${cpuScore}`;
 }
 
+// Functions point and look compare values on button presses, increments score, displays new messages and checks win-state
 point = (point, look) => {
     look = dir[Math.floor(Math.random() * 4)];
 
@@ -103,15 +100,12 @@ point = (point, look) => {
     }
 }
 
-// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
 look = (look, point) => {
     point = dir[Math.floor(Math.random() * 4)];
 
     if (look == point) {
         cpuScore++;
         message(cpuRoundWin)
-        scoreboard.innerText = document.write();
         // alert(`The CPU points ${point}. You dramatically turn your head ${look}. Their point total is now ${cpuScore}`)
         // document.getElementById("message").innerText = `The CPU got a point. Their total is: ${cpuScore}`;
     } 
