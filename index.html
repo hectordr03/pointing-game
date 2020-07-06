@@ -36,7 +36,7 @@
             <button id="start-btn" onclick="message(userPoint)">Start</button>
         </div>
 
-        <div id="play-again">
+        <div class="messages"id="play-again">
             <h4>Click to play again!</h4>
             <button id="continue" onclick="message(userPoint)">Play</button>
         </div>
@@ -52,11 +52,26 @@
             <img src="./assets/images/trainer5.png" alt="" height="300px">
         </div>
 
-        <div id="player">
+        <!-- <div id="player">
             <img src="./assets/images/trainer-back.png" alt="" height="350px">
+        </div> -->
+
+        <div id="rules-box">
+            <div id="rules">
+                <h3>The Pointing Game</h3>
+                <h4>OK, here are the rules.</h4>
+                <ul>
+                    <li>You get a chance to point up, down, left or right</li>
+                    <li>At the same time the CPU will turn it's head either up, down, left or right</li>
+                    <li>If you point in the same direction that the CPU turns it's head, then you get a point!</li>
+                    <li>Ohterwise you lose your turn and the CPU gets a shot at you.</li>
+                    <li>First player to 3 points wins!</li>
+                </ul>
+            </div>
         </div>
 
     </div>
+
 
     <!-- Class="messages" are hidden and displayed after continuing message box -->
 
@@ -82,12 +97,20 @@
 
     <!-- Arrows -->
 
-    <!-- <div class="arrows">
-        <img src="./assets/images/arrow.png" alt="" hidden>
+    <div class="arrows" hidden>
+        <div>
+            <img src="./assets/images/right-arrow.png" alt="" class="arrows" id="right-arrow">
+        </div>
+        <div>
+            <img src="./assets/images/left-arrow.png" alt="" class="arrows" id="left-arrow">
+        </div>
+        <div>
+            <img src="./assets/images/up-arrow.png" alt="" class="arrows" id="up-arrow">
+        </div>
+        <div>
+            <img src="./assets/images/down-arrow.png" alt="" class="arrows" id="down-arrow">
+        </div>
     </div>
-    <div class="arrows"></div>
-    <div class="arrows"></div>
-    <div class="arrows"></div> -->
 
     <script src="./script.js"></script>
 </body>
