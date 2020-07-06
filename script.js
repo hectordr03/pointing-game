@@ -37,9 +37,8 @@
 //     }
 // }
 
-
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-// console.log("Working (1)")
+
 
 // declaring initial variables (player, cpu, diections, etc)
 const dir = ["up", "down", "left", "right"];
@@ -86,11 +85,8 @@ point = (point, look) => {
     if (point == look) {
         userScore++;
         message(roundWin);
-        // alert(`You point ${point} with the fury of a thousand suns. The CPU shamefully looks ${look}. Your point total is now: ${userScore}`)
-        // scoreboard.innerText= "Player Score:" + userScore;
     }
     else (message(roundLoss))
-    // else (alert(`You point ${point} in full confidence... but the CPU looks ${look}. It's their turn now.`), message(userLook))
 
     if (userScore == 3) {
         alert (`Congrats! You beat the CPU at the pointing game. Now the champion deserves some rest`)
@@ -106,12 +102,8 @@ look = (look, point) => {
     if (look == point) {
         cpuScore++;
         message(cpuRoundWin)
-        // alert(`The CPU points ${point}. You dramatically turn your head ${look}. Their point total is now ${cpuScore}`)
-        // document.getElementById("message").innerText = `The CPU got a point. Their total is: ${cpuScore}`;
     } 
     else (message(cpuRoundLoss))
-    // (alert(`The CPU points ${point}. You epically turn your head away, looking ${look}.`), message(userPoint))
-    // else (message())
 
     if (cpuScore == 3) {
         alert (`You lost! to.. a computer... at a pointing game.... Well you'll get 'im next time bud. Just try again.'`)
