@@ -38,20 +38,22 @@
 // }
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-
+// > > > > > VARIABLES < < < < <
 
 // declaring initial variables (player, cpu, diections, etc)
 const dir = ["up", "down", "left", "right"];
 let cpu = dir[Math.floor(Math.random() * 4)];
 
+let userScore = "0";
+let cpuScore = "0";
+let winScore = 3;;
+
+// > > > > > DIV VARIABLES < < < < <
+
 const up = document.getElementById("up").value = "up";
 const down = document.getElementById("down").value = "down";
 const left = document.getElementById("left").value = "left";
 const right = document.getElementById("right").value = "right";
-
-let userScore = "0";
-let cpuScore = "0";
-let winScore = 3;;
 
 // Message divs to display different message in message box
 const message_div = document.getElementById("message-box");
@@ -70,6 +72,7 @@ const cpuRoundWin = document.getElementById('cpu-roundWin');
 const cpuRoundLoss = document.getElementById('cpu-roundLoss');
 
 // = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// > > > > > FUNCTIONS < < < < <
 
 // Replaces and displays messages in the mssage box
 message = (target) => {
@@ -80,14 +83,17 @@ message = (target) => {
 
 // Functions point and look compare values on button presses, increments score, displays new messages and checks win-state
 point = (point, look) => {
+    // Sets look to a random direction from our array
     look = dir[Math.floor(Math.random() * 4)];
 
+    // Check point and look direstions. User gets another opportunity if they're right.
     if (point == look) {
         userScore++;
         message(roundWin);
     }
     else (message(roundLoss))
 
+    // Declares you as the winner if you get 3 points
     if (userScore == 3) {
         alert (`Congrats! You beat the CPU at the pointing game. Now the champion deserves some rest`)
         cpuScore = 0;
@@ -96,6 +102,7 @@ point = (point, look) => {
     }
 }
 
+// The "look" function is just the opposite of the "point" function. Checks if CPU wins.
 look = (look, point) => {
     point = dir[Math.floor(Math.random() * 4)];
 
@@ -113,4 +120,11 @@ look = (look, point) => {
     }
 }
 
-// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+// Hides the rules div and shows message box and character images
+hide = () => {
+    // I added the rule box in last so I didn't bother declaring these as variables
+    document.getElementById("rules-box").style.display = "none";
+    document.getElementById("cpu").style.visibility = "visible";
+    document.getElementById("player").style.visibility = "visible";
+    message_div.style.visibility = "visible";
+}
