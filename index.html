@@ -7,23 +7,28 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <!-- Box class is the main container for my elements -->
     <div class="box">
+
+        <!-- The "point" div asks the user which way they want to point when it's their turn -->
         <div class="choices" id="point">
             <p>Which way will you point?</p>
 
             <div class="buttons">
+                <!-- Button onclicks compare the button value with a randomly generated cpu direction -->
                 <button name="up" class="choice-btns"id="up" onclick="point(up, cpu)">UP</button>
                 <button class="choice-btns"id="down" onclick="point(down, cpu)">DOWN</button>
                 <button class="choice-btns"id="left" onclick="point(left, cpu)">LEFT</button>
                 <button class="choice-btns"id="right" onclick="point(right, cpu)">RIGHT</button>
             </div>
-
         </div>
 
+        <!-- Asks user which way they want to look -->
         <div class="choices" id="look">
             <p>It's the CPU's turn now. Which way will you look?</p>
 
             <div class="buttons">
+                <!-- Utilizes onclick="look" to generate a random point value for CPU -->
                 <button class="choice-btns"id="up" onclick="look(up, cpu)">UP</button>
                 <button class="choice-btns"id="down" onclick="look(down, cpu)">DOWN</button>
                 <button class="choice-btns"id="left" onclick="look(left, cpu)">LEFT</button>
@@ -31,11 +36,31 @@
             </div>
         </div>
 
+        <!-- Displays the rules of the game -->
+        <div id="rules-box">
+            <div id="rules">
+                <h3>The Pointing Game</h3>
+                <h4>OK, here are the rules.</h4>
+                <ul>
+                    <li>You get a chance to point up, down, left or right</li>
+
+                    <li>At the same time the CPU will turn it's head either up, down, left or right</li>
+                    <li>If you point in the same direction that the CPU turns it's head, then you get a point!</li>
+                    <li>Ohterwise you lose your turn and the CPU gets a shot at you.</li>
+                    <li>First player to score 3 points wins!</li>
+                    <br>
+                    <button id="ok-btn" onclick="hide()">OK!</button>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Meesage box div works as the dialoge box. All other messages will be displayed here. -->
         <div id="message-box">
             <h4 class="message">Press "Start" to play the Pointing game.</h4>
             <button id="start-btn" onclick="message(userPoint)">Start</button>
         </div>
 
+        <!-- Play-again resets to player's first turn -->
         <div class="messages"id="play-again">
             <h4>Click to play again!</h4>
             <button id="continue" onclick="message(userPoint)">Play</button>
@@ -48,33 +73,17 @@
             </div>
         </div>
 
-        <div id="cpu">
+        <div id="cpu" class="characters">
             <img src="./assets/images/trainer5.png" alt="" height="300px">
         </div>
 
-        <!-- <div id="player">
+        <div id="player" class="characters">
             <img src="./assets/images/trainer-back.png" alt="" height="350px">
-        </div> -->
-
-        <div id="rules-box">
-            <div id="rules">
-                <h3>The Pointing Game</h3>
-                <h4>OK, here are the rules.</h4>
-                <ul>
-                    <li>You get a chance to point up, down, left or right</li>
-                    <li>At the same time the CPU will turn it's head either up, down, left or right</li>
-                    <li>If you point in the same direction that the CPU turns it's head, then you get a point!</li>
-                    <li>Ohterwise you lose your turn and the CPU gets a shot at you.</li>
-                    <li>First player to 3 points wins!</li>
-                </ul>
-            </div>
         </div>
 
     </div>
 
-
     <!-- Class="messages" are hidden and displayed after continuing message box -->
-
     <div id="win-round" class="messages">
         <p>You got him! You get another chance...</p>
         <button id="continue" onclick="message(userPoint)">continue</button>
@@ -95,22 +104,8 @@
         <button id="continue" onclick="message(userPoint)">continue</button>
     </div>
 
-    <!-- Arrows -->
-
-    <div class="arrows" hidden>
-        <div>
-            <img src="./assets/images/right-arrow.png" alt="" class="arrows" id="right-arrow">
-        </div>
-        <div>
-            <img src="./assets/images/left-arrow.png" alt="" class="arrows" id="left-arrow">
-        </div>
-        <div>
-            <img src="./assets/images/up-arrow.png" alt="" class="arrows" id="up-arrow">
-        </div>
-        <div>
-            <img src="./assets/images/down-arrow.png" alt="" class="arrows" id="down-arrow">
-        </div>
-    </div>
+    <!-- Pokemon battle music. I wanted to add some text that says "For the full exprience" -->
+    <audio controls src="./assets/audio/battle-music.mp3"></audio>
 
     <script src="./script.js"></script>
 </body>
