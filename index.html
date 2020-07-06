@@ -12,10 +12,10 @@
             <p>Which way will you point?</p>
 
             <div class="buttons">
-                <button name="up" class="choice-btns"id="up" onclick="point(up, cpu)">Up</button>
-                <button class="choice-btns"id="down" onclick="point(down, cpu)">Down</button>
-                <button class="choice-btns"id="left" onclick="point(left, cpu)">Left</button>
-                <button class="choice-btns"id="right" onclick="point(right, cpu)">Right</button>
+                <button name="up" class="choice-btns"id="up" onclick="point(up, cpu)">UP</button>
+                <button class="choice-btns"id="down" onclick="point(down, cpu)">DOWN</button>
+                <button class="choice-btns"id="left" onclick="point(left, cpu)">LEFT</button>
+                <button class="choice-btns"id="right" onclick="point(right, cpu)">RIGHT</button>
             </div>
 
         </div>
@@ -24,10 +24,10 @@
             <p>It's the CPU's turn now. Which way will you look?</p>
 
             <div class="buttons">
-                <button class="choice-btns"id="up" onclick="look(up, cpu)">Up</button>
-                <button class="choice-btns"id="down" onclick="look(down, cpu)">Down</button>
-                <button class="choice-btns"id="left" onclick="look(left, cpu)">Left</button>
-                <button class="choice-btns"id="right" onclick="look(right, cpu)">Right</button>
+                <button class="choice-btns"id="up" onclick="look(up, cpu)">UP</button>
+                <button class="choice-btns"id="down" onclick="look(down, cpu)">DOWN</button>
+                <button class="choice-btns"id="left" onclick="look(left, cpu)">LEFT</button>
+                <button class="choice-btns"id="right" onclick="look(right, cpu)">RIGHT</button>
             </div>
         </div>
 
@@ -47,6 +47,15 @@
                 <p id="cpu-score"></p>
             </div>
         </div>
+
+        <div id="cpu">
+            <img src="./assets/images/trainer5.png" alt="" height="300px">
+        </div>
+
+        <div id="player">
+            <img src="./assets/images/trainer-back.png" alt="" height="350px">
+        </div>
+
     </div>
 
     <!-- Class="messages" are hidden and displayed after continuing message box -->
@@ -70,6 +79,15 @@
         <p>You managed to look away!</p>
         <button id="continue" onclick="message(userPoint)">continue</button>
     </div>
+
+    <!-- Arrows -->
+
+    <!-- <div class="arrows">
+        <img src="./assets/images/arrow.png" alt="" hidden>
+    </div>
+    <div class="arrows"></div>
+    <div class="arrows"></div>
+    <div class="arrows"></div> -->
 
     <script src="./script.js"></script>
 </body>
